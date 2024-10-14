@@ -16,3 +16,12 @@ useSeoMeta({
 })
 
 </script>
+
+<style>
+:root {
+  /* 覆盖各类颜色的自定义属性 */
+  --van-primary-color: #fb7299 !important;
+  --van-back-top-background: #fbfbfb !important;
+  --van-back-top-text-color: #666 !important;
+}
+</style>
