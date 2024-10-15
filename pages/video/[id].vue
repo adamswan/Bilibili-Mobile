@@ -58,6 +58,7 @@ const videoId = route.params.id;
 
 const barrageRef = ref<BarrageInstance>();
 
+// 放视频时显示弹幕
 const onPlay = () => {
   barrageRef.value?.play();
 };
