@@ -3,7 +3,7 @@
   <van-sticky>
     <!-- 头部 -->
     <AppHeader />
-    
+
     <!-- 弹幕 -->
     <van-barrage v-model="barrageList" :auto-play="false" ref="barrageRef">
       <!-- 视频 -->
@@ -55,7 +55,6 @@ const barrageList = ref([
 
 const route = useRoute();
 const videoId = route.params.id;
-console.log("videoId", videoId);
 
 const barrageRef = ref<BarrageInstance>();
 
@@ -67,12 +66,13 @@ const onPause = () => {
   barrageRef.value?.pause();
 };
 
-const { data: detail } = await useFetch(`/api/hot/${videoId}`);
+const { data: detail } = await useFetch(`/api/video/${videoId}`);
+console.log('detail',detail.value);
 
 // 获取视频列表数据
 const { data: videoList } = await useFetch("/api/video");
 
-// 动态设置标题
+// 动态设置标题 利于seo优化
 useSeoMeta({
   title: `${detail.value?.title}_哔哩哔哩bilibili_${detail.value?.author.name}`,
 });
